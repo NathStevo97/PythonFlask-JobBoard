@@ -11,3 +11,6 @@ COPY . .
 RUN addgroup -S projects && adduser -S -H projects -G projects
 RUN chown -R projects:projects /src/app
 USER projects
+
+EXPOSE 5000
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
